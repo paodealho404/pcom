@@ -1,0 +1,239 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="DEMO_DSB" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
+    </property>
+    <property name="SDF Director" class="ptolemy.domains.sdf.kernel.SDFDirector">
+        <property name="iterations" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{955.0, -15.0}">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1048}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 918]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8000000000000005">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{844.0000000000002, 449.0000000000006}">
+    </property>
+    <entity name="Const" class="ptolemy.actor.lib.Const">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <doc>Create a constant sequence.</doc>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[40.0, 5.0]">
+        </property>
+    </entity>
+    <entity name="AddSubtract" class="ptolemy.actor.lib.AddSubtract">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[310.0, -45.0]">
+        </property>
+    </entity>
+    <entity name="MultiplyDivide" class="ptolemy.actor.lib.MultiplyDivide">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[510.0, 340.0]">
+        </property>
+    </entity>
+    <entity name="modulante" class="ptolemy.actor.lib.gui.SequencePlotter">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1048}, maximized=true}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[1920, 975]">
+        </property>
+        <property name="xUnit" class="ptolemy.data.expr.Parameter" value="1.0/8000.0">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[530.0, 95.0]">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>SequencePlotter</title>
+<xRange min="0.0" max="0.03187500000000002"/>
+<yRange min="-1.0" max="1.0"/>
+</plot>?>
+        </configure>
+    </entity>
+    <entity name="portadora" class="ptolemy.actor.lib.Sinewave">
+        <property name="samplingFrequency" class="ptolemy.data.expr.Parameter" value="8000.0">
+        </property>
+        <property name="frequency" class="ptolemy.actor.parameters.PortParameter" value="3000.0">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, 410.0}">
+        </property>
+    </entity>
+    <entity name="Spectrum2" class="ptolemy.domains.sdf.lib.Spectrum">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1070.0, 285.0]">
+        </property>
+    </entity>
+    <entity name="Demodulado" class="ptolemy.actor.lib.gui.SequencePlotter">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 0, 1938, 1048}, maximized=false}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[1920, 975]">
+        </property>
+        <property name="xInit" class="ptolemy.data.expr.Parameter" value="-4000.0">
+        </property>
+        <property name="xUnit" class="ptolemy.data.expr.Parameter" value="8000/256">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1400.0, 505.0]">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>SequencePlotter2</title>
+<xRange min="-4000.0" max="3905.0"/>
+<yRange min="-0.9876883405951615" max="0.9876883405951475"/>
+</plot>?>
+        </configure>
+    </entity>
+    <entity name="Espectro Receptor" class="ptolemy.actor.lib.gui.SequencePlotter">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1048}, maximized=true}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[1920, 975]">
+        </property>
+        <property name="xInit" class="ptolemy.data.expr.Parameter" value="-4000.0">
+        </property>
+        <property name="xUnit" class="ptolemy.data.expr.Parameter" value="8000.0/256">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1285.0, 305.0]">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>SequencePlotter3</title>
+<xRange min="-4000.0" max="3968.75"/>
+<yRange min="-49.267439205816224" max="9.462174374919883"/>
+</plot>?>
+        </configure>
+    </entity>
+    <entity name="modulado" class="ptolemy.actor.lib.gui.SequencePlotter">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1048}, maximized=true}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[1920, 975]">
+        </property>
+        <property name="xUnit" class="ptolemy.data.expr.Parameter" value="1.0/8000.0">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[700.0, 230.0]">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>SequencePlotter4</title>
+<xRange min="0.0" max="0.03187500000000002"/>
+<yRange min="-0.9876883405951475" max="0.9876883405951615"/>
+</plot>?>
+        </configure>
+    </entity>
+    <entity name="mensagem" class="ptolemy.actor.lib.Sinewave">
+        <property name="samplingFrequency" class="ptolemy.data.expr.Parameter" value="8000.0">
+        </property>
+        <property name="frequency" class="ptolemy.actor.parameters.PortParameter" value="300.0">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-5.0, 135.0}">
+        </property>
+    </entity>
+    <entity name="Const2" class="ptolemy.actor.lib.Const">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <doc>Create a constant sequence.</doc>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[450.0, 670.0]">
+        </property>
+    </entity>
+    <entity name="AddSubtract2" class="ptolemy.actor.lib.AddSubtract">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1040.0, 610.0]">
+        </property>
+    </entity>
+    <entity name="portadora2" class="ptolemy.actor.lib.Sinewave">
+        <property name="samplingFrequency" class="ptolemy.data.expr.Parameter" value="8000.0">
+        </property>
+        <property name="frequency" class="ptolemy.actor.parameters.PortParameter" value="3000">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[210.0, 540.0]">
+        </property>
+    </entity>
+    <entity name="MultiplyDivide3" class="ptolemy.actor.lib.MultiplyDivide">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[620.0, 475.0]">
+        </property>
+    </entity>
+    <entity name="FIR" class="ptolemy.domains.sdf.lib.FIR">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{780.0, 475.0}">
+        </property>
+    </entity>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{185.0, 15.0}">
+        </vertex>
+    </relation>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation11" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{565.0, 410.0}">
+        </vertex>
+    </relation>
+    <relation name="relation12" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{1145.0, 385.0}">
+        </vertex>
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{265.0, 115.0}">
+        </vertex>
+    </relation>
+    <link port="Const.output" relation="relation5"/>
+    <link port="AddSubtract.plus" relation="relation5"/>
+    <link port="AddSubtract.plus" relation="relation2"/>
+    <link port="AddSubtract.output" relation="relation"/>
+    <link port="MultiplyDivide.multiply" relation="relation3"/>
+    <link port="MultiplyDivide.multiply" relation="relation"/>
+    <link port="MultiplyDivide.output" relation="relation11"/>
+    <link port="modulante.input" relation="relation2"/>
+    <link port="modulante.input" relation="relation5"/>
+    <link port="portadora.output" relation="relation3"/>
+    <link port="Spectrum2.input" relation="relation12"/>
+    <link port="Spectrum2.output" relation="relation9"/>
+    <link port="Demodulado.input" relation="relation12"/>
+    <link port="Espectro Receptor.input" relation="relation9"/>
+    <link port="modulado.input" relation="relation11"/>
+    <link port="mensagem.output" relation="relation2"/>
+    <link port="Const2.output" relation="relation7"/>
+    <link port="AddSubtract2.plus" relation="relation7"/>
+    <link port="AddSubtract2.plus" relation="relation10"/>
+    <link port="AddSubtract2.output" relation="relation12"/>
+    <link port="portadora2.output" relation="relation6"/>
+    <link port="MultiplyDivide3.multiply" relation="relation11"/>
+    <link port="MultiplyDivide3.multiply" relation="relation6"/>
+    <link port="MultiplyDivide3.output" relation="relation8"/>
+    <link port="FIR.input" relation="relation8"/>
+    <link port="FIR.output" relation="relation10"/>
+</entity>
